@@ -1,6 +1,10 @@
 /* Grunnstiler - ikke rør disse, de er bare for å gjøre boksene synlige */
-html {
+*{
+	box-sizing: border-box;
+}
 
+html { 
+	font-size: calc(0.7em + 1vw);
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +17,7 @@ main{
 	grid-area: ;
 	display: flex;
 	flex-wrap: ;
-	gap:
+	gap: 1rem
 	padding: 
 }
 }
