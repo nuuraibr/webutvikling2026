@@ -129,124 +129,185 @@ main {
     /*hva skjer når animasjon avsluttes..........*/
     /*hvor mange ganger skal animasjonen gjentas..........*/
     /*hvordan skal tiden være fordelt på animasjonen..........*/
+    position: absolute;
+    animation-name: ghost;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
 }
 
 /* STEG 1 – Lag en animasjonsfunksjon for spøkelset som beveger seg rundt banen.
    Ta utgangspunkt i 0, 10, 20, 30, 40 … 100 når du setter keyframes. */
 
 /*........*/
-ghost {
+@keyframes .fa-ghost {
+    0% {
+        left: 50px;
+        top: 50px;
+    }
+
+    10% {
+        left: 200px;
+        top: 50px;
+    }
+
+    20% {
+        left: 50px;
+        top: 50px;
+    }
+
+    30% {
+        left: 200px;
+        top: 50px;
+    }
+
+    40% {
+        left: 50px;
+        top: 50px;
+    }
+
+    50% {
+        left: 200px;
+        top: 50px;
+    }
+
+
+    60% {
+        left: 50px;
+        top: 50px;
+    }
+
+    70% {
+        left: 200px;
+        top: 50px;
+    }
+
+    80% {
+        left: 50px;
+        top: 50px;
+    }
+
+    90% {
+        left: 200px;
+        top: 50px;
+    }
+
+    100% {
+        left: 200px;
+        top: 50px;
+    }
 
     /* START
        Bruk startposisjonen definert i .fa-ghost (samme x og y som der). */
-    @keyframes animasjon {
-        opacity: 0;
-        opacity: 1;
 
-        /* x = startverdi fra .fa-ghost */
-        ....: ....;
-        /* y = startverdi fra .fa-ghost */
-    }
 
-    /* TRINN 2
+
+    /* x = startverdi fra .fa-ghost */
+    ....: ....;
+    /* y = startverdi fra .fa-ghost */
+}
+
+/* TRINN 2
        Beveg spøkelset HØYRE ca. 309px fra startposisjon.
        Hold høyden (y) uendret. */
-    ... {
-        ....: ....;
-        /* x = start + ~309px */
-        ....: ....;
-        /* y = uendret */
-    }
+... {
+    ....: ....;
+    /* x = start + ~309px */
+    ....: ....;
+    /* y = uendret */
+}
 
-    /* TRINN 3
+/* TRINN 3
        Behold x uendret (samme som forrige trinn).
        Beveg OPP ca. 270px (fra midthøyde til øverste løype). */
-    ... {
-        ....: ....;
-        /* x = uendret */
-        ....: ....;
-        /* y = opp ~270px */
-    }
+... {
+    ....: ....;
+    /* x = uendret */
+    ....: ....;
+    /* y = opp ~270px */
+}
 
-    /* TRINN 4
+/* TRINN 4
        Beveg HØYRE ca. 192px langs øverste løype.
        Hold y uendret (fortsatt øverst). */
-    ... {
-        ....: ....;
-        /* x = forrige + ~192px */
-        ....: ....;
-        /* y = uendret (øverst) */
-    }
+... {
+    ....: ....;
+    /* x = forrige + ~192px */
+    ....: ....;
+    /* y = uendret (øverst) */
+}
 
-    /* TRINN 5
+/* TRINN 5
        Behold x uendret.
        Beveg NED ca. 270px tilbake til midthøyde. */
-    ... {
-        ....: ....;
-        /* x = uendret */
-        ....: ....;
-        /* y = ned ~270px (til midthøyde) */
-    }
+... {
+    ....: ....;
+    /* x = uendret */
+    ....: ....;
+    /* y = ned ~270px (til midthøyde) */
+}
 
-    /* TRINN 6
+/* TRINN 6
        Beveg HØYRE ca. 299px langs midthøyden til høyre side.
        Hold y uendret. */
-    ... {
-        ....: ....;
-        /* x = forrige + ~299px */
-        ....: ....;
-        /* y = uendret (midthøyde) */
-    }
+... {
+    ....: ....;
+    /* x = forrige + ~299px */
+    ....: ....;
+    /* y = uendret (midthøyde) */
+}
 
-    /* TRINN 7
+/* TRINN 7
        Behold x uendret (ytterst til høyre).
        Beveg NED ca. 256px til nederste løype. */
-    ... {
-        ....: ....;
-        /* x = uendret (helt til høyre) */
-        ....: ....;
-        /* y = ned ~256px (nederste løype) */
-    }
+... {
+    ....: ....;
+    /* x = uendret (helt til høyre) */
+    ....: ....;
+    /* y = ned ~256px (nederste løype) */
+}
 
-    /* TRINN 8
+/* TRINN 8
        Beveg VENSTRE ca. 493px langs nederste løype.
        Hold y uendret (nederst). */
-    ... {
-        ....: ....;
-        /* x = forrige − ~493px */
-        ....: ....;
-        /* y = uendret (nederst) */
-    }
+... {
+    ....: ....;
+    /* x = forrige − ~493px */
+    ....: ....;
+    /* y = uendret (nederst) */
+}
 
-    /* TRINN 9
+/* TRINN 9
        Behold x uendret (indre venstreside).
        Beveg OPP ca. 256px tilbake til midthøyde. */
-    ... {
-        ....: ....;
-        /* x = uendret (indre venstre) */
-        ....: ....;
-        /* y = opp ~256px (midthøyde) */
-    }
+... {
+    ....: ....;
+    /* x = uendret (indre venstre) */
+    ....: ....;
+    /* y = opp ~256px (midthøyde) */
+}
 
-    /* TRINN 10
+/* TRINN 10
        Beveg VENSTRE ca. 307px tilbake mot startens venstreposisjon.
        Hold y uendret (midthøyde). */
-    ... {
-        ....: ....;
-        /* x = forrige − ~307px (tilbake mot start-x) */
-        ....: ....;
-        /* y = uendret (midthøyde) */
-    }
+... {
+    ....: ....;
+    /* x = forrige − ~307px (tilbake mot start-x) */
+    ....: ....;
+    /* y = uendret (midthøyde) */
+}
 
-    /* TRINN 11 (slutten av runden)
+/* TRINN 11 (slutten av runden)
        Beveg HØYRE ca. 307px til «indre venstreside» (mellompunkt før neste runde).
        Hold y uendret (midthøyde). */
-    ... {
-        ....: ....;
-        /* x = forrige + ~307px (indre venstre) */
-        ....: ....;
-        /* y = uendret (midthøyde) */
-    }
+... {
+    ....: ....;
+    /* x = forrige + ~307px (indre venstre) */
+    ....: ....;
+    /* y = uendret (midthøyde) */
+}
 }
 
 /* Husk:
