@@ -1,13 +1,24 @@
-@use "colors";
-@use "fonts";
+@use "partials/colors";
+@use "partials/fonts";
 @use "spacing";
 
 /* Extention */
-.flex-column{
+.flex-column {
 	display: flex;
 	flex-direction: column;
 }
 
+@mixin flex ($display, $direction) {
+	display: $display;
+	flex-direction: $direction;
+}
+
+@mixin hero($bg, $color, $textalign: center, $padding: 3rem spacing.$spacing-medium) {
+	background-color: $bg;
+	color: $color;
+	text-align: $textalign;
+	padding: $padding;
+}
 
 /* Grunnoppsett */
 
@@ -41,12 +52,14 @@ a {
 /* Toppheader */
 
 .toppheader {
+	@include flex (flex, column);
 	@extend .flex-column;
 	align-items: center;
 	gap: spacing.$spacing-small;
 	padding: spacing.$spacing-medium;
 	background-color: colors.$light-text;
 	border-bottom: 1px solid #e2e2e2;
+
 }
 
 .logo {
@@ -70,9 +83,11 @@ a {
 			&:nth-child(1) {
 				transform: rotateZ(45deg) translateY(2.5px);
 			}
+
 			&:nth-child(2) {
 				opacity: 0;
 			}
+
 			&:nth-child(3) {
 				transform: rotateZ(-45deg) translateY(-2.5px);
 			}
@@ -115,10 +130,10 @@ a {
 /* Hero */
 
 .hero {
-	background-color: #2b2d42;
-	color: colors.$light-text;
-	text-align: center;
-	padding: 3rem spacing.$spacing-medium;
+	@include hero (red, white, center, 3rem spacing.$spacing-medium) // background-color: #2b2d42;
+	// color: colors.$light-text;
+	// text-align: center;
+	// padding: 3rem spacing.$spacing-medium;
 }
 
 .hero h1 {
@@ -226,7 +241,7 @@ main h2 {
 	text-align: center;
 }
 
-.om-oss > p {
+.om-oss>p {
 	margin: 0 0 1rem 0;
 }
 
@@ -451,6 +466,7 @@ address {
 	background-color: #bf5f36;
 	transform: scale(1.1);
 }
+
 .hero .knapp:active {
 	background-color: #904525;
 	transform: scale(0.9);
