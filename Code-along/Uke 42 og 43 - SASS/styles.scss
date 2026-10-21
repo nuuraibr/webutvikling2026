@@ -129,7 +129,7 @@ a {
 /* Hero */
 
 .hero {
-	@include hero (red, white, center, 3rem spacing.$spacing-medium) // background-color: #2b2d42;
+	@include hero ( red, white, center, 3rem spacing.$spacing-medium) // background-color: #2b2d42;
 	// color: colors.$light-text;
 	// text-align: center;
 	// padding: 3rem spacing.$spacing-medium;
